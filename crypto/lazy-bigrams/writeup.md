@@ -1,6 +1,6 @@
 # crypto/lazy-bigrams Writeup
 319 solves | 104 points | Difficulty: Baby  
-**TLDR: Decode a bigram substituion using known plaintext and plaintext structure.**
+**TLDR: Decode a bigram substitution using known plaintext and plaintext structure.**
 ## Description
 ```
 Don't feel like writing a plaintext...
