@@ -3,7 +3,8 @@
 **TLDR: Reverse an encryption algorithm from an x86-16 binary.**
 ## Description
 ```
-Dug around the archives and found a floppy disk containing a long-forgotten LA CTF challenge. Perhaps you may be the first to solve it in decades.
+Dug around the archives and found a floppy disk containing a long-forgotten LA CTF challenge. 
+Perhaps you may be the first to solve it in decades.
 ```
 The challenge consists of a single file `CHALL.IMG`, which is a floppy disk image.
 To run the program, insert the disk image into a DOS emulator and load the program from within.
