@@ -117,4 +117,6 @@ When the solution regex is rearranged into 19 lines of 101 characters, the flag 
 .###.#.#.###.#.#.###.###.#.....#.#.#..#..###...#.###.#...###.###.###.#.#.###.###.#.....#.#.#..#..##..
 .....................................................................................................
 ```
+The flag is more legible when reentered into the original page:
+![Webpage solve](<webpage solve.png>)
 The flag is not the easiest to read, expecially the 6 which looks like a G and the 0 looking like an O, but carefully paying attention to the flag format and the distinguishing features (such as W being taller than w) will reveal the resulting flag `lactf{Wh47_d0_y0u_637_wh3n_y0u_cr055_4_r363x_4nd_4_n0n06r4m?_4_r363x06r4m!}`
