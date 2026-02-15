@@ -21,4 +21,5 @@ Obtaining the list of coordinates and plotting them directly would just show a f
 
 At this point, it will still be hard to read, so to clean up the text, additional processing will be needed. For example, the flag shape can be removed, leaving just the text itself on the plot. The printer moves faster when it isn't printing than when it is, so filtering out fast printer movements helps to remove lines between characters. After adding a bounding box to isolate the text, the graph should appear similar to this. This is implemented in `plot.py`
 ![Recounstructed flag graph](graph.png)  
+
 Despite some of the leftover noise, reading out the characters reveals the final flag `lactf{4n_irl_fla6_f0r_onc3}`
