@@ -1,6 +1,7 @@
 # LA CTF 2026 Challenges + Writeups
 All of my challenges from LA CTF 2026 with writeups.  
-Ordered by category as listed on the platform, then by solves in descending order.
+Ordered by category as listed on the platform, then by solves in descending order.  
+A full list of challenges from LA CTF 2026 is available [here](https://github.com/uclaacm/lactf-archive)
 ## crypto
 - [lazy-bigrams](crypto/lazy-bigrams/) (319 solves | 104 points)
 - [not-so-lazy-trigrams](crypto/not-so-lazy-trigrams/) (217 solves | 117 points)
