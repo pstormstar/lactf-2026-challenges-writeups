@@ -2,7 +2,7 @@
 603 solves | 100 points | Difficulty: Baby  
 **TLDR: Recover a misencoded (mojibake) flag.**
 ## Description
-```\
+```
 I was reading about Unicode character encodings until one day, my flag turned into Japanese! Does little-endian mean the little byte's at the end or that the characters start with the little byte?
 ```
 The challenge consists of 2 files: chall.txt and gen.py.  
@@ -36,7 +36,7 @@ Notice something interesting about these characters. All of their codepoints end
 ```
 From here, the resulting flag is `lactf{1_sur3_h0pe_th1s_d0es_n0t_g3t_l0st_1n_translati0n!}`
 ## Notes and Observations
-- Since the flag only contains ASCII characters, it is not necessary to encode with UTF-16BE. Any ASCII compatible encoding, such as UTF-8 would do as well. The only difference would be that there would be null bytes before each character, but those would be removed by simply printing the resulting string.
+- Since the flag only contains ASCII characters, it is not necessary to decode with UTF-16LE. Any ASCII compatible encoding, such as UTF-8 would do as well. The only difference would be that there would be null bytes before each character, but those would be removed by simply printing the resulting string.
 ```
 >>> chall.encode(encoding="UTF-16BE").decode() # Defaults to UTF-8
 'l\x00a\x00c\x00t\x00f\x00{\x001\x00_\x00s\x00u\x00r\x003\x00_\x00h\x000\x00p\x00e\x00_\x00t\x00h\x001\x00s\x00_\x00d\x000\x00e\x00s\x00_\x00n\x000\x00t\x00_\x00g\x003\x00t\x00_\x00l\x000\x00s\x00t\x00_\x001\x00n\x00_\x00t\x00r\x00a\x00n\x00s\x00l\x00a\x00t\x00i\x000\x00n\x00!\x00}\x00'
