@@ -12,7 +12,7 @@ The challenge is to reassemble the original code given the 25 chunks. To start, 
 ![Version 7 QR Code format](version7.png)  
 The first of the chunks to be reassembled are the 3 with the position boxes and the 6 with the alignment boxes. All the boxes are distinct, so there is only one position for each of them.
 ![Recounstructed code part 1](codept1.png)
-Next are the 4 chunks containing timing, 2 horizontal and 2 vertical. The timing chunks are distinguished by their 7th row or column having an alternating pattern. Because only one of the chunks also matches the version information in each pair, they all also have only one position.
+Next are the 4 chunks containing timing, 2 horizontal and 2 vertical. The timing chunks are distinguished by their 7th row or column having an alternating pattern. Because only one of the chunks also matches the version information section in each pair, they all also have only one position.
 ![Recounstructed code part 2](codept2.png)  
 With 12 chunks remaining, it may be tempting to brute force the remaining 12 chunks, but given that the bottom-rightmost chunk is known, it's possible to read the partial bitsteam and using the known bitmask and the fact that the QR code consists of the flag and so contains only printable ASCII, idenfify the blocks that would produce a bitstream that would start with as many printable characters as possible then brute force the rest of the chunks. Because QR codes of this size use interleaved data, the full recounstruction will be needed to obtain the flag.
 ![Recounstructed](codefinal.png)  
