@@ -1,5 +1,4 @@
 import os
-import re
 
 # Manual solver
 # 1. Knowing that the final text begins with "lactf{", obtain the double photetically mapped text and map all the associated bigrams. This will solve a decent portion of the cipher.

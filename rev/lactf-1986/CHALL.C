@@ -41,25 +41,25 @@ main()
 
     if((input[0] != 'l') | (input[1] != 'a') | (input[2] != 'c') | (input[3] != 't') | (input[4] != 'f') | (input[5] != '{'))
     {
-	printf("Sorry, the flag must begin with \"lactf{...\"");
-	return 0;
+        printf("Sorry, the flag must begin with \"lactf{...\"");
+        return 0;
     }
 
     state = seed(input);
 
     for (i = 0; i < 73; i++)
     {
-	state = lfsr(state);
-	if(input[i] == 0)
-	{
-	    break;
-	}
-	output[i] = input[i] ^ (state & 0xFF);
-	if(output[i] != flag[i])
-	{
-	    printf("Sorry, that's not the flag.");
-	    return 0;
-	}
+        state = lfsr(state);
+        if(input[i] == 0)
+        {
+            break;
+        }
+        output[i] = input[i] ^ (state & 0xFF);
+        if(output[i] != flag[i])
+        {
+            printf("Sorry, that's not the flag.");
+            return 0;
+        }
     }
     printf("Indeed, that's the flag!");
     return 0;

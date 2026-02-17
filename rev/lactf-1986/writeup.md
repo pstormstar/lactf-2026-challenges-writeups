@@ -1,6 +1,6 @@
 # rev/lactf-1986 Writeup
 256 solves | 110 points | Difficulty: Easy  
-**TLDR: Reverse an encryption algorithm from an x86-16 binary.**
+**TLDR: Reverse a flag-checker program from an x86-16 binary.**
 ## Description
 ```
 Dug around the archives and found a floppy disk containing a long-forgotten LA CTF challenge. 
@@ -35,7 +35,7 @@ A:\>
 Extracting the DOS executable `CHALL.EXE` from the disk image using 7zip and opening the program in Ghidra, it can be seen that the program itself consist of three main functions.
 - The first function `FUN_1000_0010` is a hashing function that takes in an input string and calculates the hash by multiplying the current hash by 67 (equivalent to `hash << 6 + hash << 1 + hash`), adding the byte value of an input character, and truncating the result to 20 bits for every character in the input going left to right with an initial hash of 0.
 - The second function `FUN_1000_007b` is a program that implements a 20-bit LFSR using bits 0 and 3 to determine the next bit.
-- The main function `FUN_1000_00b0` asks for the flag as input, calculates the hash using the first function, checks for the input to begin with `lactf{`, then checks if the input character XORed with the current LFSR value truncated to 8 bits matches its corresponding value in a byte array (stored at address `0146` in the data section) for every bit in the input.
+- The main function `FUN_1000_00b0` asks for the flag as input, calculates the hash using the first function, checks for the input to begin with `lactf{`, then checks if the input character XORed with the current LFSR value truncated to 8 bits matches its corresponding value in a byte array (stored at address `0146` in the data section) for every byte in the input.
 To reverse the encryption, find a sequence of LFSR values that when XORed with the byte array gives a valid flag of the form `lactf{...}`
 
 ### Solve script

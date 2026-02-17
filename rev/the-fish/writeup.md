@@ -8,7 +8,7 @@ The fish asks you for the flag. Unfortunately, it can only describe it to you in
 The challenge consists of a single file `fish.py`, which is the entire challenge.
 ## Solve
 `fish.py` is an interpreter for the [Fish (><>)](https://esolangs.org/wiki/Fish) esolang, a stack-based language. It asks for an input, stores it in `flag`, then writes the values of the characters in `flag` into the intial stack, and calls the interpreter on the ><> program stored in `fisherator`.
-The program differs from the originak interpreter in two ways:
+The program differs from the original interpreter in two ways:
 - The division instruction `,` does integer division, not float division
 - The instruction to print the top of stack as a number `n` instead checks if the number on the top of the stack matches a hard-coded number (the output of the program initialized with the flag) and prints the appropriate output.
 
@@ -60,7 +60,7 @@ n;                              Compares the final value and exits
 ```
 In short, the program converts a string into a base-256 big-endian integer, then tracks its sequence down to 1, where the next number is (3n+1)/2 if the current number is odd anf n/2 if it's even. It builds a binary sequence starting with 1, where each appended 0 is an even number and each 1 is an odd number. This final string is compared to the hardcoded integer.
 
-So obtain the flag, sinply reverse this process by taking the hardcoded integer, and read all but the first bit from right to left, multiplying by 2 for each 0 and multiplying by 2, sibtracting 1, and dividing by 3 for each 1.
+So obtain the flag, sinply reverse this process by taking the hardcoded integer, and read all but the first bit from right to left, multiplying by 2 for each 0 and multiplying by 2, subtracting 1, and dividing by 3 for each 1.
 
 ### Solve script
 ```

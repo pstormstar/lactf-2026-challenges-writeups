@@ -44,7 +44,7 @@ function match() {
 createInput();
 find.addEventListener('click', match);
 ```
-The script waits for the "Find flag" button to be pressed, then takes all the checkboxes in the page, concates their states into a single string, `.` for ever unchecked box and `#` for every checked box, then checks whether the resulting string matches the regex stored in `theFlag` and outputs the result.
+The script waits for the "Find flag" button to be pressed, then takes all the checkboxes in the page, concates their states into a single string, `.` for every unchecked box and `#` for every checked box, then checks whether the resulting string matches the regex stored in `theFlag` and outputs the result.
 
 Thus, the challenge is to figure out what string of 1919 (101*19) `.`s and `#`s would match the regex. The regex itself can be broken down into 3 parts: the vertical constraints, the input constraint, and the horizontal constraints.
 - The vertical constraints are of the form  
@@ -66,7 +66,7 @@ checks whether the 92nd character of each 101 character group consists of some n
 There are a total of 101 vertical constaints, 1 for each of the 101 columns.
 - The length constaint is the simple lookahead `(?=^.{1919}$)` which checks that the entire string is exactly 1919 characters long and nothing else.
 - The horizontal constraints are of the form  
-`(\.* ... \.*)(?<=.{n*101})(?<!.{n*101+1})`  
+`(\.* ... \.*)(?<=.{n*101})(?<!.{(n*101+1})`  
 which are capturing groups that check whether the n+1th set of exactly 101 characters matches a specific number and grouping of `#`s.
 As an example the 8th such constraint
 ```
@@ -117,6 +117,6 @@ When the solution regex is rearranged into 19 lines of 101 characters, the flag 
 .###.#.#.###.#.#.###.###.#.....#.#.#..#..###...#.###.#...###.###.###.#.#.###.###.#.....#.#.#..#..##..
 .....................................................................................................
 ```
-The flag is more legible when reentered into the original page:
+The flag is more readable when reentered into the original page:
 ![Webpage solve](<webpage solve.png>)
-The flag is not the easiest to read, expecially the 6 which looks like a G and the 0 looking like an O, but carefully paying attention to the flag format and the distinguishing features (such as W being taller than w) will reveal the resulting flag `lactf{Wh47_d0_y0u_637_wh3n_y0u_cr055_4_r363x_4nd_4_n0n06r4m?_4_r363x06r4m!}`
+The flag is not the easiest to read, especially the 6 which looks like a G and the 0 looking like an O, but carefully paying attention to the flag format and the distinguishing features (such as W being taller than w) will reveal the resulting flag `lactf{Wh47_d0_y0u_637_wh3n_y0u_cr055_4_r363x_4nd_4_n0n06r4m?_4_r363x06r4m!}`
